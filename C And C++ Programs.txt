@@ -1,0 +1,4203 @@
+/******************************************************************************
+                               1. GRADE CHECKING
+*******************************************************************************/
+#include <stdio.h>
+int main ()
+{
+    int n;
+    printf("Please enter the no");
+  scanf ("%d", &n);
+  if (n >= 90 & n < 100)
+	printf ("A Grade");
+  else if (n >= 80 & n < 90)
+	printf ("B Grade");
+  else if (n >= 79 & n < 80)
+	printf ("C Grade");
+  else if (n>=69 & n<79)
+	printf ("D Grade");
+	else if (n>=59 & n<69)
+	printf ("E Grade");
+	else
+	printf ("Fail");
+}
+
+/******************************************************************************
+                         2. SUM AND PRODUCT OF "N" NUMBERS
+*******************************************************************************/
+#include <stdio.h>
+int main ()
+{
+int i, n, s=0, p=1, num ;
+printf("How many no.s you want");
+scanf("%d", &n);
+printf("Enter the no");
+for(i=0; i<n; i++)
+{
+   scanf("%d", &num); 
+   s=s+num;
+   p=p*num; 
+}
+printf("sum of first %d no.s=%d\nproduct of first %d no.s=%d",n,s,n, p);
+}
+
+/******************************************************************************
+                                3. SUM OF EVEN AND ODD NO.S
+*******************************************************************************/
+#include <stdio.h>
+int main()
+{
+int e, o,i, n,c1=0,c2=0,num,s1=0,s2=0;
+printf("Enter How many No.s");
+scanf ("%d", &n);
+printf("Please enter the no");
+for (i=0; i<n; i++)
+{
+    scanf("%d", &num);
+    if (num%2==0)
+    {
+       s1=s1 + num;
+       c1++;
+    }
+    else
+    {
+    s2= s2 + num;
+    c2++;
+    }
+    }
+    printf("Sum of even no.=%d\n,Sum of odd no.=%d\n,No. of even=%d\n,No. of odd=%d\n", s1,s2,c1,c2);
+}
+4. To Check The No Is Prime Or Not.
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+int i,n,flag;
+printf("Please enter the no.(Except 0, 1 and 2 as (0 and 1) are neither prime nor composite and 2 is the only even prime no)");
+scanf("%d", &n);
+for (i=2; i<n; i++)
+{
+    flag=0;
+    if(n%i==0)
+    {
+        printf("The no is not prime");
+        flag=1;
+        break;
+    }
+}
+if(flag==0)
+{
+        printf("The no is prime");
+}
+}
+/******************************************************************************
+                             5. Armstrong Number
+*******************************************************************************/
+#include <stdio.h>
+int main()
+{
+    int i,n,r,s,temp; 
+  for(i=1;i<=10000000;i++)
+    {
+      temp=i;
+      s=0;
+    while(temp!=0)
+        {
+         r=temp%10;
+        s=s+(r*r*r);
+        temp=temp/10;
+        }
+        if(i==s)
+        {
+            printf("%d\n", i);
+        }
+    }
+    }
+ /******************************************************************************
+              6. To Print All Palindrome No's Between A Given Range
+*******************************************************************************/
+#include <stdio.h>
+int main()
+{
+int m,r,n,temp,i;
+for(i=1;i<500; i++)
+{
+    temp=i;
+    m=0;
+    while(temp!=0)
+    {
+     r=temp%10;
+    m=m*10+r;
+    temp=temp/10;
+    }
+if(m==i)
+{
+    printf("%d\t", i);
+}
+}
+}
+/******************************************************************************
+                              7. Fibonacci Series
+*******************************************************************************/
+//(Iterative Code)
+#include <stdio.h>
+int main()
+{
+int a=0, b=1, i,c;
+printf("%d\t%d", a,b);
+for(i=3;i<=10; i++)
+{
+    c=a+b;
+    printf("\t%d\t", c);
+    a=b;
+    b=c;
+}
+}
+//(Recursive Code)
+#include <iostream>
+using namespace std;
+int fib(int n)
+{
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+int main()
+{
+    int n;
+    cin >> n;
+    cout << fib(n);
+}
+/******************************************************************************
+                              8. RGB To CMYK Conversion
+*******************************************************************************/
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+int R,G,B,W,a,b,c;
+float C,M,Y,K;
+printf("Please Enter The Values Of R,G and B(Value Should Be Between 0 and 255");
+scanf("%d%d%d", &R, &G, &B);
+a=R/255;
+b=G/255;
+c=B/255;
+W=(a>b && a>c?a:(b>c?b:c));
+printf("%d\n", W);
+C=(W-R/255)/W;
+printf("%f\n", C);
+M=(W-G/255)/W;
+printf("%f\n", M);
+Y=(W-B/255)/W;
+printf("%f\n", Y);
+K=(1-W);
+printf("%f", K);
+} 
+/******************************************************************************
+                         9. Printing Of Strong No's
+*******************************************************************************/
+#include <stdio.h>
+int main()
+{
+ int fact(int),n,r,sum,temp,q;
+ printf("Please enter the no.");
+ scanf("%d", &n);
+for(q=1;q<=n;q++)
+{
+  temp=q;
+  sum=0;
+ while(temp!=0)
+ {
+     r=temp%10;
+    sum=sum + fact(r);
+     temp=temp/10;
+ }
+ if(sum==q)
+ {
+     printf("%d\t", q);
+ }
+}
+ } 
+int fact(int r)
+{
+    int p=1;
+    for(int i=1;i<=r;i++)
+    {
+        p=p*i;
+    }
+    return p;
+}
+/******************************************************************************
+                            10. Calculator Using Choice
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+int a,b;
+printf("Please enter the value of a and b\n");
+scanf("%d%d", &a,&b);
+printf(" 1 Addition\n 2 Subtraction\n 3 Multiplication\n 4 Division\n 5 Remainder\n 6 Exit ");
+int ch;
+while(1)
+{
+    printf("\nPlease enter your choice");
+    scanf("%d", &ch);
+    switch(ch)
+    {
+        case 1: printf("Sum=%d", a+b);
+        break;
+        case 2: printf("Subtract=%d", a-b);
+        break;
+        case 3: printf("Multiplication=%d", a*b);
+        break;
+        case 4: printf("Division=%d", a/b);
+        break;
+        case 5: printf("Remainder=%d", a%b);
+        break;
+        case 6: exit(0);
+        default: printf("Wrong Choice");
+        break;
+        
+    }
+}
+}
+/******************************************************************************
+                             11. Prime Divisors(Factors)
+*******************************************************************************/
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+int p,prime(int),n,i=2;
+printf("Please Enter The No.");
+scanf("%d", &n);
+while(n!=1)
+{
+if(n%i==0)
+{
+p=prime(i);
+if(p==0)
+{
+printf("%d\t", i);
+n=n/i;
+}
+}
+else
+{
+    i++;
+}
+}
+}
+int prime(int n)
+{
+    int i,flag=0;
+    for(i=2;i<n;i++)
+    {
+    if(n%i==0)
+    {
+        flag=1;
+        break;
+    }
+    }
+    if(flag==1)
+    return 1;
+    else
+    return 0;
+}
+12.
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+float x,r,n=7,Sum,a;
+printf("Please Enter The Value Of x");
+scanf("%f", &x);
+a=(x-1)/x;
+a=r;
+Sum=a*((pow(r,n)-1)/r-1);
+printf("%f", Sum);
+}
+13.
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+int p,n;
+printf("Please Enter The No.");
+scanf("%d", &n);
+p=abs(n);
+printf("Absolute Value Of No. is = %d", p );
+}
+14.
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+int i,Sum=0,Count=0,n=100;
+for(i=1;i<n;i++)
+{
+if(i%6==0 && i%4!=0)
+{
+  Sum=Sum + i;
+  Count++;
+}
+}
+printf("The Sum Of Integers Divisible By 6 And Not by 4 is =%d\n", Sum);
+printf("No Of Integers Divisible By 6 And Not by 4 is = %d", Count);
+}
+15.
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+int i,Count=0,n=100;
+for(i=1;i<n;i++)
+{
+if(i%2!=0 || i%3!=0)
+{
+  printf("%d\t", i);
+  Count++;
+}
+}
+printf("\nNo Of Integers Not Divisible By Either 2 or 3 = %d", Count);
+}
+/******************************************************************************
+                           16. Pythagorean Triplets
+*******************************************************************************/
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+int i,j,k,n=30;
+for(i=1;i<=n;i++)
+{
+    for(j=1;j<=n;j++)
+    {
+        if(j>i)
+        {
+            for(k=1;k<=n;k++)
+            {
+               if(k>j) 
+               {
+                  if((pow(k,2)==(pow(j,2) + pow(i,2))))
+                  printf("%d\t%d\t%d\n",i,j,k); 
+               }
+            }
+        }        
+    }
+}
+}
+17.Largest And Smallest Element In An Array.
+#include <stdio.h>
+int i,n;
+int main()
+{
+void fun(int a[]);
+printf("Enter the value of n");
+scanf("%d", &n);
+int a[n];
+for(i=0;i<n;i++)
+{
+    scanf("%d", &a[i]);
+}
+fun(a);
+}
+void fun(int b[n])
+{
+    int L,S;
+    L=b[0];
+    S=b[0];
+  for(i=1;i<n;i++)
+{
+    if(b[i]>L)
+    {
+        L=b[i];
+    }
+    if(b[i]<S)
+    {
+        S=b[i];
+    }
+} 
+printf("%d%d", L,S);
+}
+18.Checking Prime No's in an Array.
+#include <stdio.h>
+int i,n;
+int main()
+{
+void fun(int a[]);
+printf("Enter the value of n(Except 0)");
+scanf("%d", &n);
+int a[n];
+printf("Enter the values(Except 0 and 1 as these are neither prime nor composite)");
+for(i=0;i<n;i++)
+{
+    scanf("%d", &a[i]);
+}
+fun(a);
+}
+void fun(int a[n])
+{
+    int k,p;
+  for(i=0;i<n;i++)
+  {
+     int flag=0;
+      p=a[i];
+  for(k=2;k<p;k++)
+    {
+    if((a[i]%k)==0)
+    {
+    flag=1;
+    break;
+    }
+    }
+    if(flag==0)
+    printf("Prime No.=%d\t", a[i]);
+    if(flag==1)
+    printf("Not a Prime No.=%d\t", a[i]);
+}
+}
+/******************************************************************************
+                19.Interchanging Rows and Column(Transpose) In A Matrix
+*******************************************************************************/
+#include <stdio.h>
+int m,n;
+int main()
+{
+    printf("Please enter the value of m and n");
+    scanf("%d%d", &m,&n);
+ int a[m][n];
+ int fun1(int a[m][n]);
+ for(int i=0;i<m;i++)
+ {
+     for(int j=0;j<n;j++)
+     {
+        scanf("%d", &a[i][j]);
+     }
+ }
+ fun1(a);
+ }
+int fun1(int a[m][n])
+{
+    int c1,c2,temp,j;
+printf("Enter The Rows You Want To Interchange");
+scanf("%d%d",&c1,&c2);
+   for(j=0;j<n;j++)
+    {
+            temp=a[j][c1];
+            a[j][c1]=a[j][c2];
+            a[j][c2]=temp;
+    }
+     for(int i=0;i<m;i++)
+ {
+    for(int j=0;j<n;j++)
+    {
+        printf("%d\t",a[i][j]);
+    }
+    printf("\n");
+} 
+}
+/******************************************************************************
+                20.Concatenation Of Two Arrays Into A Third Array
+*******************************************************************************/
+#include <stdio.h>
+int m,n;
+int main()
+{
+    int i,j,k,c1=0,c2=0,p;
+    printf("Enter Value Of m and n");
+    scanf("%d%d", &m,&n);
+    int a[m];
+    int b[n];
+    int c[m+n];
+    printf("Enter The Elements Of First Array");
+    for(i=0;i<m;i++)
+    {
+          scanf("%d", &a[i]);
+    }
+    printf("Enter The Elements Of Second Array");
+    for(i=0;i<n;i++)
+    {
+            scanf("%d", &b[i]);
+    }
+    for(i=0,p=0;i<m;i++)
+    {
+        if(a[i]%2!=0)
+        {
+            c[p]=a[i];
+            c1++;
+            p++;
+        }
+    }
+    for(j=0,k=p;j<n;j++)
+    {
+        if(b[j]%2==0)
+     {
+         c[k]=b[j];
+         c2++;
+         k++;
+     }
+    }
+    for(i=0;i<c1+c2;i++)
+    {
+            printf("%d\t", c[i]);
+    }
+}
+/******************************************************************************
+                              21.String Functions
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+char s[50];
+char q[50];
+void fun1(char s[],char q[]);
+gets(s);
+gets(q);
+fun1(s,q);
+}
+void fun1(char b[], char p[])
+{
+    char c[50];
+    //printf("%d%d",strlen(b),strlen(p));
+   // strcpy(c,b);
+   //strupr(b);
+   //strlwr(p);
+    //strcat(b,p);
+    if(strcmp(b,p)==0)
+    printf("Both Strings are Equal");
+    else if(strcmp(b,p)>0)
+    printf("First String is Greater Than Second String");
+    else
+    printf("Second String is Greater Than First String");
+    //puts(b);
+    //printf("\n");
+    //puts(p);
+}
+/******************************************************************************
+                            22.Linear Search(1-D Array)
+*******************************************************************************/
+#include <stdio.h>
+int main()
+{
+    int i,m,p,flag=0;
+    scanf("%d", &m);
+int a[m];
+for(i=0;i<m;i++)
+{
+    scanf("%d",&a[i]);
+}
+printf("Enter The Element You Want To Search");
+scanf("%d",&p);
+for(i=0;i<m;i++)
+{
+    if(a[i]==p)
+    {
+        printf("Element Found In Index=%d",i);
+        flag=1;
+        break;
+    }
+}
+if(flag==0)
+printf("Element Not Found In Array");
+}
+/******************************************************************************
+                        23.Inserting an Element In An Array(1-D)
+*******************************************************************************/
+#include <stdio.h>
+int main()
+{
+    int i,position,element,n;
+    printf("Please Enter The Value Of n");
+    scanf("%d", &n);
+int a[n];
+printf("Please Enter The Elements");
+for(i=0;i<n;i++)
+{
+    scanf("%d", &a[i]);
+}
+printf("Please Enter The Index");
+scanf("%d", &position);
+printf("Please Enter Element You Want To Insert");
+scanf("%d", &element);
+for(i=n+1;i>=position;i--)
+{
+a[i]=a[i-1];
+}
+a[position]=element;
+for(i=0;i<n+1;i++)
+{
+ printf("%d\t",a[i]);   
+}
+}
+/******************************************************************************
+                        24.Deleting an Element In An Array(1-D)
+*******************************************************************************/
+#include <stdio.h>
+int main()
+{
+    int i,position,element,n;
+    printf("Please Enter The Value Of n");
+    scanf("%d", &n);
+int a[n];
+printf("Please Enter The Elements");
+for(i=0;i<n;i++)
+{
+    scanf("%d", &a[i]);
+}
+printf("Please Enter The Index");
+scanf("%d", &position);
+for(i=position;i<n;i++)
+{
+a[i]=a[i+1];
+}
+for(i=0;i<n-1;i++)
+{
+ printf("%d\t",a[i]);   
+}
+}
+
+/******************************************************************************
+                               25.Student Record 
+*******************************************************************************/
+
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+using namespace std;
+int m,n,i,j;
+struct student
+{
+    int rollno;
+    char name[20];
+    float Sub[3];
+};
+void display(struct student b[]);
+void updateName(struct student b[]);
+void updateRollno(struct student b[]);
+int main()
+{
+printf("Please Enter The Size Of Structure");
+scanf("%d", &n);
+struct student s[n],b[n];
+printf("How Many Records You Want And How Many Subjects");
+scanf("%d%d", &m, &n);
+for(i=0;i<m;i++)
+{
+    scanf("%d%s", &s[i].rollno,s[i].name);
+    b[i].rollno=s[i].rollno, strcpy(b[i].name,s[i].name);
+    for(j=0;j<n;j++)
+    {
+        scanf("%f", &s[i].Sub[j]);
+        b[i].Sub[j]=s[i].Sub[j];
+    }
+}
+int ch;
+while(ch!=4)
+{
+cout<<"Please Enter Your Choice ";
+cin>>ch;
+switch(ch)
+{
+    case 1: display(b);
+    break;
+    case 2: updateName(b);
+    break;
+    case 3: updateRollno(b);
+    break;
+    case 4: break;
+    default: cout<<"Wrong Choice Entered";
+}
+}
+}
+void display(struct student b[])
+{
+    for(i=0;i<m;i++)
+{
+    printf("%d\t%s", b[i].rollno,b[i].name);
+    for(j=0;j<n;j++)
+    {
+        printf("\t%f", b[i].Sub[j]);
+    }
+printf("\n");
+}
+}
+void updateName(struct student b[])
+{
+    int flag = 0;
+    char name[20];
+    char name1[20];
+    cout<<"Enter The Name You Want To Update ";
+    cin>>name;
+    for(i = 0;i<m;i++)
+    {
+        if(strcmp(b[i].name, name) == 0) 
+        {
+            cout<<"Enter The New Name ";
+            cin>>name1;
+           strcpy(b[i].name,name1); 
+            flag = 1;
+        }
+    }
+    if(flag == 0)
+    cout<<"Name Not Found ";
+    cout<<endl;
+}
+void updateRollno(struct student b[])
+{
+    int rollno,rollno1,flag = 0;
+    cout<<"Enter The Roll no. You Want To Update ";
+    cin>>rollno;
+    for(i = 0;i<m;i++)
+    {
+        if(b[i].rollno == rollno)
+        {
+            cout<<"Enter The New Roll No.";
+            cin>>rollno1;
+            b[i].rollno = rollno1;
+            flag = 1;
+        }
+    }
+    if(flag == 0)
+    cout<<"Roll No. Not Found ";
+    cout<<endl;
+}
+/******************************************************************************
+                          26.Student Records With Marks
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+int m,n,i,j;
+struct student
+{
+    int rollno;
+    char name[20];
+    float Sub[3];
+};
+void fun(struct student s[n]);
+int main()
+{
+printf("Please Enter The Size Of Structure");
+scanf("%d", &n);
+struct student s[n],b[n];
+printf("How Many Records You Want And How Many Subjects");
+scanf("%d%d", &m, &n);
+for(i=0;i<m;i++)
+{
+    scanf("%d%s", &s[i].rollno,s[i].name);
+    b[i].rollno=s[i].rollno, strcpy(b[i].name,s[i].name);
+    for(j=0;j<n;j++)
+    {
+        scanf("%f", &s[i].Sub[j]);
+        b[i].Sub[j]=s[i].Sub[j];  
+    }
+}
+fun(b);
+}
+void fun(struct student b[n])
+{
+   int Sum, Sum1,Gtotal=0;
+    for(i=0;i<m;i++)
+{
+    Sum=0;
+    Sum1=0;
+    for(j=0;j<n;j++)
+    {
+        Sum=Sum + b[i].Sub[j];
+        Sum1=Sum1 + b[j].Sub[i];
+    }
+    printf("Total Marks Of Student in Row %d=%d" ,i, Sum);
+    printf("\n");
+    printf("Total Marks Of Student in Column %d=%d",i, Sum1);
+    printf("\n");
+    Gtotal=Gtotal + Sum;
+}
+printf("Grand Total=%d", Gtotal);
+}
+27.
+#include <stdio.h>
+struct student 
+{
+    int rollno;
+    char name[20];
+    char dept[20];
+    char course[20];
+    int year;
+};
+void fun(struct student s[],int);
+int n,rollno;
+int main()
+{
+    struct student s[450];
+    printf("Please Enter No. Of Entries");
+    scanf("%d",&n);
+    printf("Please Enter The Roll no.,Name,Dept,Course and Year Of Every Student");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d%s%s%s%d", &s[i].rollno,s[i].name,s[i].dept,s[i].course,&s[i].year);
+    }
+    printf("Please Enter The Roll No. Of Student");
+    scanf("%d", &rollno);
+    fun(s,rollno);
+}
+void fun(struct student p[],int rollno)
+{
+for(int i=0;i<n;i++)
+{
+    if(p[i].rollno==rollno)
+    {
+        printf("%s\t%s\t%s\t%d",p[i].name,p[i].course,p[i].dept,p[i].year);
+    }
+}
+}
+28.
+#include <stdio.h>
+struct data
+{
+    int AccountNo;
+    char name[20];
+    float balance;
+};
+void fun(struct data s[]);
+int n;
+int main()
+{
+    struct data s[200];
+    printf("Please Enter No. Of Entries");
+    scanf("%d",&n);
+    printf("Please Enter The Account No.,Name And Balance Of Each Customer");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d%s%f", &s[i].AccountNo,s[i].name,&s[i].balance);
+    }
+    fun(s);
+}
+void fun(struct data p[])
+{
+for(int i=0;i<n;i++)
+{
+    if(p[i].balance<1000)
+    {
+        printf("%d\t%s", p[i].AccountNo,p[i].name);
+    }
+}
+}
+29.
+#include <stdio.h>
+struct employee
+{
+    int employeecode;
+    char name[20];
+    int date;
+};
+void fun(struct employee s[], int);
+int n,currentdate;
+int main()
+{
+    struct employee s[200];
+    printf("Please Enter No. Of Entries");
+    scanf("%d",&n);
+    printf("Please Enter The Employee Code,Name(Not More Than 20 Characters) And Date Of Joining(In No. Only) Of Each Employee");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d%s%d", &s[i].employeecode,s[i].name,&s[i].date);
+    }
+    printf("Please Enter Current Date(In No. Only)");
+scanf("%d", &currentdate);
+    fun(s,currentdate);
+}
+void fun(struct employee p[],int currentdate)
+{
+for(int i=0;i<n;i++)
+{
+    if(currentdate-p[i].date>=3)
+    {
+        printf("%s\n",p[i].name);
+    }
+}
+}
+30.
+#include <stdio.h>
+#include <string.h>
+struct engineparts
+{
+    int ymf;
+    char serialno[3];
+    char material[20];
+    int quantity;
+};
+void fun(struct engineparts s[]);
+int n;
+int main()
+{
+    struct engineparts s[200];
+    printf("Please Enter No. Of Entries");
+    scanf("%d",&n);
+    printf("Please Enter Serial No.(Between AA0 and FF9), Material(Not More Than 20 Characters), Year Of Manufacture And Quantity Of Each Engine Part");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d%s%s%d", &s[i].ymf,s[i].serialno,s[i].material,&s[i].quantity);
+    }
+    fun(s);
+}
+void fun(struct engineparts p[])
+{
+for(int i=0;i<n;i++)
+{
+    printf("%d\t%s\t%s\t%d", p[i].ymf,p[i].serialno,p[i].material,p[i].quantity);
+    printf("\n");
+}
+}
+31.
+#include <stdio.h>
+struct book
+{
+    int day;
+    int month;
+    int year;
+};
+struct hook
+{
+    int day;
+    int month;
+    int year;
+};
+int main()
+{
+    struct book s;
+    struct hook p;
+    printf("Please Enter Day(1-7),Month(1-12) And Year Of S");
+    scanf("%d%d%d",s.day,s.month,&s.year);
+    printf("Please Enter Day(1-7),Month(1-12) And Year Of P");
+    scanf("%d%d%d",p.day,p.month,&p.year);
+    if(s.day==p.day && s.month==p.month && s.year==p.year)
+    return 0;
+    else
+    return 1;
+}
+32.
+#include <stdio.h>
+struct data
+{
+    int AccountNo;
+    char name[20];
+    float balance;
+};
+void fun1(struct data s[]);
+int n;
+struct data s[200];
+int main()
+{
+    
+    printf("Please Enter No. Of Entries");
+    scanf("%d",&n);
+    printf("Please Enter The Account No.,Name And Balance Of Each Customer");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d%s%f", &s[i].AccountNo,s[i].name,&s[i].balance);
+    }
+    fun1(s);
+}
+void fun1(struct data q[])
+{
+    int flag,d,a,flag1=0,flag2=0,w;
+    printf("Enter 0 or 1");
+    scanf("%d", &flag);
+    if(flag==1) //deposit
+    {
+      printf("Enter Deposit Amount and Account No.");
+      scanf("%d%d",&d,&a);
+      for(int i=0;i<n;i++)
+      {
+          if(q[i].AccountNo==a)
+          {
+              q[i].balance=q[i].balance + d;
+              flag1=1;
+              break;
+          }
+      }
+      if(flag1==0)
+      printf("Account No Doesn't Exist");
+    }
+    if(flag==0) //withdrawal
+    {
+    printf("Enter Withdrawal Amount and Account No.");
+    scanf("%d%d",&w,&a);
+       
+          for(int i=0;i<n;i++)
+{
+    if(q[i].AccountNo==a)
+          {
+             if(q[i].balance<w)
+    {
+        printf("Balance is Insufficient");
+    }
+    else
+    {
+        q[i].balance=q[i].balance - w;
+        if(q[i].balance<1000)
+        {
+            printf("The Balance is Insufficient for the specified Withdrawal");
+        }
+    }
+    flag2=1;
+     break;
+          }
+} 
+if(flag2==0)
+printf("Account No Doesn't Exist");
+       } 
+    for(int i=0;i<n;i++)
+    {
+        printf("\n%d\t%f\n", q[i].AccountNo,q[i].balance);
+    }
+}
+33.
+/******************************************************************************
+                                   Pointers
+*******************************************************************************/
+#include <stdio.h>
+#include <math.h>
+float  fun1(int *,int *,int *,int *);
+void fun2();
+void fun3();
+int main()
+{
+  int ch;
+  while(1)
+  {
+  printf("Please Enter  Your Choice\n");
+  printf("1.Area Of Right Angled Triangle\n 2.Area Of Equilateral Triangle\n 3.Exit");
+  scanf("%d", &ch);
+  switch (ch)
+  {
+    case 1:  fun2();
+             break;
+    case 2:  fun3();
+             break;
+    case 3: return 0;
+    default: printf("Wrong choice Entered");
+  }
+  }
+}
+float fun1(int *p1,int *p2,int *p3,int *p4 )
+{
+    float d1, d2, d;
+    printf("\n");
+    d1=(*p3-*p1)*(*p3-*p1);
+    d2=(*p4-*p2)*(*p4-*p2);
+    d=sqrt(d1+d2);
+    return d;
+}
+void fun2()
+{
+  int x1,y1,x2,y2,x3,y3;
+  long double Area, M, N;
+    printf("Please Enter the coordinates(2-D) of 3 sides of Right Angled Triangle");
+    scanf("%d%d%d%d%d%d",&x1,&y1,&x2,&y2,&x3,&y3);
+    M=fun1(&x1,&y1,&x3,&y3);
+    
+    N=fun1(&x1,&y1,&x2,&y2);
+    printf("\n %Lf %Lf", M, N);
+    Area=0.5*M*N;
+    printf("%Lf\n", Area);
+}
+void fun3()
+{
+    int x1,y1,x2,y2,a;
+    float Area;
+    printf("Please Enter the coordinates(2-D) of x1,y1,x2,y2");
+    scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+    a=fun1(&x1,&y1,&x2,&y2);
+    Area=1.73/4*pow(a,2);
+    printf("%f\n", Area);
+}
+34.
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int n,i,j,k;
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    for(i=0;i<n-1;i++)
+    {
+            for(j=i+1;j<n;j++)
+            {
+                if(a[i]==a[j])
+                {
+                    for(k=j;k<n-1;k++)
+                    {
+                        a[k]=a[k+1];
+                    }
+                    n--;j--;
+                }
+            }
+    }
+    for(i=0;i<n;i++)
+    cout<<' '<< a[i]<<endl;
+    return 0;
+}
+35.
+/******************************************************************************
+                                Stack Program
+*******************************************************************************/
+#include <stdio.h>
+#include<stdlib.h>
+int n;
+int top=0;
+int main()
+{
+int ch;
+printf("Please Enter value of n");
+scanf("%d", &n);
+int a[n];
+void push(int a[n]);
+void pop(int a[n]);
+void display(int a[n]);
+void count(int a[n]);
+void search(int a[n]);
+while(1)
+{
+printf("Please Enter Your Choice\n");
+printf(" 1.Push\n 2.Pop\n 3.Print\n 4.Count\n 5.Search\n 6.Exit\n");
+scanf("%d", &ch);
+    switch(ch)
+    {
+        case 1: push(a);
+        break;
+        case 2: pop(a);
+        break;
+        case 3: display(a);
+        break;
+        case 4: count(a);
+        break;
+        case 5: search(a);
+        break;
+        case 6: exit (0);
+        default: printf("Wrong Choice Entered");
+    }
+}
+}
+void push(int a[])
+{
+    int ele;
+    if(top==n)
+    {
+        printf("Stack Is Full\n");  //isFull() Condition Checked Here
+        return;
+    }
+    else
+    {
+        printf("Enter The Element\n");
+        scanf("%d", &ele);
+       a[top]=ele;
+       top++;
+    }
+}
+void pop(int a[])
+{
+    if(top==0)
+    {
+        printf("Stack Is Empty\n");  //isEmpty() Condition Checked Here
+        return;
+    }
+   else
+   {
+       top--;
+       printf("Deleted Element Is=%d\n",a[top]);
+   }
+}
+void display(int a[])
+{
+    if(top>0)
+    {
+        printf("Elements Are \n");
+       for(int i=top-1;i>=0;i--)
+    {
+        printf("%d\t",a[i]);
+    } 
+    }
+   else
+   {
+       printf("There Is No Element\n");
+   }
+}
+void count(int a[])
+{
+int count=0;
+  for(int i=0;i<top;i++)
+  {
+      count++;
+  }
+  printf("No. Of Elements=%d\n", count);
+}
+void search(int a[])
+{
+    int flag=0,p,i;
+    printf("Enter The Element You Want To Search In Stack\n");
+    scanf("%d", &p);
+    for(i=0;i<top;i++)
+    {
+        if(a[i]==p)
+    {
+        flag=1;
+        break;
+    }
+    }
+    if(flag==0)
+    printf("Element Not Found In Stack\n");
+    if(flag==1)
+    {
+        printf("Element Found In Index=%d\n",i);
+    }
+}
+36.
+/******************************************************************************
+                          Pointer To An Array Of Structure
+*******************************************************************************/
+#include <stdio.h>
+struct stud
+{
+    int rollno;
+    char name[20];
+};
+struct stud s[3];
+int main()
+{
+    int n;
+    struct stud *p=s;
+    printf("Please Enter No Of Records");
+    scanf("%d", &n);
+    while(p<s+n)
+    {
+        scanf("%d%s", &p->rollno, p->name);
+        p++;
+    }
+    p=s;
+    while(p<s+n)
+    {
+        printf("%d %s", p->rollno, p->name);
+        p++;
+    }
+}
+/******************************************************************************
+                 37.Array Of Pointers To Array Of Stuctures
+*******************************************************************************/
+#include <stdio.h>
+struct stud
+{
+    int rollno;
+    char name[20];
+};
+struct stud s[3];
+int main()
+{
+    int n,i;
+    struct stud *p[3];
+    printf("Enter n");
+    scanf("%d", &n);
+    for(i=0;i<3;i++)
+    {
+        p[i]=&s[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%d%s", &p[i]->rollno, p[i]->name);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d %s", p[i]->rollno, p[i]->name);
+    }
+}
+38.
+/******************************************************************************
+                            38.Queue Program
+*******************************************************************************/
+#include <stdio.h>
+#include<stdlib.h>
+int n;
+int front=0;
+int rear=0;
+int main()
+{
+int ch;
+printf("Please Enter The Value of n");
+scanf("%d", &n);
+int a[n];
+void enqueue(int a[n]);
+void dequeue(int a[n]);
+void print(int a[n]);
+void count(int a[n]);
+void search(int a[n]);
+while(1)
+{
+printf("Please Enter Your Choice\n");
+printf(" 1.Enqueue\n 2.Dequeue\n 3.Print\n 4.Count\n 5.Search\n 6.Exit\n");
+scanf("%d", &ch);
+    switch(ch)
+    {
+        case 1: enqueue(a);
+        break;
+        case 2: dequeue(a);
+        break;
+        case 3: print(a);
+        break;
+        case 4: count(a);
+        break;
+        case 5: search(a);
+        break;
+        case 6: exit (0);
+        default: printf("Wrong Choice Entered");
+    }
+}
+}
+void enqueue(int a[])
+{
+    int ele;
+    if(rear==n)
+    {
+        printf("Queue Is Full\n");
+        return;
+    }
+    else
+    {
+        printf("Enter The Element\n");
+        scanf("%d", &ele);
+       a[rear]=ele;
+       rear++;
+    }
+}
+void dequeue(int a[])
+{
+    if(front==rear)
+    {
+        printf("Queue Is Empty\n");
+        return;
+    }
+   else
+   {h
+       printf("Deleted Element Is=%d\n",a[front]);
+       front++;
+   }
+}
+void print(int a[])
+{
+    if(front!=rear)
+    {
+        printf("Elements Are \n");
+       for(int i=front;i<rear;i++)
+    {
+        printf("%d\t",a[i]);
+    } 
+    }
+   else
+   {
+       printf("There Is No Element In Queue\n");
+   }
+}
+void count(int a[])
+{
+int count=0;
+  for(int i=front;i<rear;i++)
+  {
+      count++;
+  }
+  printf("No.Of Elements=%d\n", count);
+}
+void search(int a[])
+{
+    int flag=0,p,i;
+    printf("Enter The Element You Want To Search In Queue\n");
+    scanf("%d", &p);
+    for(i=front;i<rear;i++)
+    {
+        if(a[i]==p)
+    {
+        flag=1;
+        break;
+    }
+    }
+    if(flag==0)
+    printf("Element Not Found In Queue\n");
+    if(flag==1)
+    {
+        printf("Element Found In Index=%d\n",i);
+    }
+}
+39. Copy Vowels 
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int i;
+    int j=0;
+char str1[20]={"india People"};
+char str2[20];
+for(i=0;str1[i]!=0;i++)
+{
+   if(str1[i]!='i'||'a')
+   {
+       //printf("%c\n",str1[i]);
+       str2[j]=str1[i];
+       j++;
+   }
+}
+str2[j]=0;
+puts(str2);
+}
+40.
+#include <stdio.h>
+int main()
+{
+int fun(int a[],int n,int Big);
+int a[5]={1,2,3,4,5};
+int Big=a[0];
+int y;
+y=fun(a,5,Big);
+printf("%d",y);
+}
+int fun(int a[],int n,int Big)
+{
+    static int i=1;
+    if(i==n)//Base Case
+    {
+        return Big;
+    }
+    else//Recursive Case
+    {
+        if(a[i]>Big)
+        {
+            Big=a[i];
+            i++;
+        }
+        fun(a,n,Big);
+    }
+}
+41.
+#include <stdio.h>
+int main()
+{
+void fun(int a[],int n,int *,int *);
+int a[5]={5,4,1,2,3};
+int Big=a[0];
+int Small=a[0];
+fun(a,5,&Big,&Small);
+printf("%d\t%d",Big,Small);
+}
+void fun(int a[],int n,int *Big,int *Small)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]> *Big)
+        *Big=a[i];
+        if(a[i]< *Small)
+        *Small=a[i];
+    }
+}
+42.
+#include <stdio.h>
+#include <string.h>
+void fun(int a[],int n,int *);
+int main()
+{
+int a[5]={1,2,3,4,5};
+int Sum=0;
+fun(a,5,&Sum);
+printf("Sum Of Odd No.s=%d",Sum);
+}
+void fun(int a[],int n,int *Sum)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]%2!=0)
+        {
+            *Sum=*Sum+a[i];
+        }
+    }
+}
+43. Sum Of Diagonal Elements Of A 2-D Array
+#include <stdio.h>
+int fun(int a[][3],int n,int *);
+int main()
+{
+int a[3][3]={1,2,3,4,5,6,7,8,9};
+int Sum=0;
+fun(a,3,&Sum);
+printf("Sum Of Diagonal Elements Of 2-D Array=%d",Sum);
+}
+int fun(int a[][3],int n,int *Sum)
+{
+    static int i=0,j=0;
+    if(i==n)
+    {
+        return *Sum;
+    }
+    else
+    {
+        if(a[i]==a[j])
+        {
+            *Sum=*Sum+a[i][j];
+            i++;
+            j++;
+        }
+       fun(a,n,Sum);
+    }
+}
+44.
+#include <stdio.h>
+struct employee
+{
+    int empid;
+    char name[20];
+    float basicpay;
+};
+struct employee s[10];
+int main()
+{
+int n;
+struct employee *p=s;
+float DA,HRA,GrandSalary;
+printf("Please Enter No Of Records");
+scanf("%d", &n);
+printf("Enter Employeeid,Name and Basic Pay Of Employees");
+while(p<s+n)
+{
+    scanf("%d%s%f", &p->empid, p->name, &p->basicpay);
+    p++;
+}
+p=s;
+while(p<s+n)
+{
+DA=0.5*p->basicpay;
+HRA=0.2*p->basicpay;
+GrandSalary=DA + HRA + p->basicpay;
+printf(" \n DA=%f\n HRA=%f\n GrandSalary=%f\n",DA,HRA,GrandSalary);
+p++;
+}
+}
+45.
+#include <stdio.h>
+int main()
+{
+char s[10]={'a','a','a','b','c','c','\0'};
+int count  90-=0-o=0-o=;
+for(int i=0;s[i]!=0;i=i+count)
+{
+    count=1;
+    for(int j=i+1;s[j]!=0;j++)
+    {
+        if(s[i]==s[j])
+    {
+        count++;
+    }
+    }
+    printf("No. Of Times The Character=%c Repeated=%d", s[i],count);
+}
+}
+46.
+#include <stdio.h>
+struct time_struct
+{
+int hour;
+int minute;
+int second;
+};
+int main()
+{
+struct time_struct s;
+printf("Please Enter The Value Of Hour(00-24),Minute(00-59) and Seconds(00-59)");
+scanf("%d%d%d",&s.hour,&s.minute,&s.second);
+printf("%d:%d:%d",s.hour,s.minute,s.second);
+}
+47.
+#include <stdio.h>
+struct time_struct
+{
+int hour;
+int minute;
+int second;
+};
+void fun(int);
+void fun1(int);
+struct time_struct s;
+int main()
+{
+int a,b;
+fun(a);
+fun1(b);
+}
+void fun(int p)
+{
+printf("Please Enter The Value Of Hour(00-24),Minute(00-59) and Seconds(00-59)");
+scanf("%d%d%d",&s.hour,&s.minute,&s.second);
+}
+void fun1(int q)
+{
+printf("%d:%d:%d",s.hour,s.minute,s.second);
+}
+48.
+#include <stdio.h>
+struct time_struct
+{
+int hour;
+int minute;
+int second;
+};
+struct time_struct s;
+void update(int);
+int main()
+{
+int a;
+update(a);
+}
+void update(int p)
+{
+while(1)
+{
+printf("Please Enter The Value Of Hour(00-24),Minute(00-60) and Seconds(00-60)");
+scanf("%d%d%d",&s.hour,&s.minute,&s.second);
+s.second=s.second+1;
+if(s.second==60)
+{
+    s.second=0;
+    s.minute=s.minute+1;
+}
+if(s.minute==60)
+{
+    s.minute=0;
+    s.hour=s.hour+1;
+}
+if(s.hour==24)
+{
+    s.hour=0;
+}
+printf("%d:%d:%d\n",s.hour,s.minute,s.second);
+}
+}
+49.
+#include <stdio.h>
+#include <stdlib.h>
+struct hotel
+{
+char name[50];
+char address[50];
+int grade;
+float roomcharge;
+int rooms;
+};
+struct hotel s[10];
+void fun(int);
+void fun1(int);
+int main()
+{
+int a,ch,b,n;
+printf("Please Enter The No Of Records You Want To Store\n");
+scanf("%d",&n);
+printf("Please Enter The Names(Max 50 Characters),Address's(Max 50 Characters),Grades(1-5),Average Room Charges And No. Of Rooms Of %d Hotels",n);
+for(int i=0;i<n;i++)
+scanf("%s%s%d%f%d", s->name, s->address,&s->grade,&s->roomcharge,&s->rooms);
+while(1)
+{
+    printf("Please Enter Your Choice\n 1. Print Hotels Of A Given Grade In Order Of Their Charges\n 2. Print Hotels With Room Charges Less Than Or Equal To A Given Price\n 3. Exit\n");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1: fun(a);
+        break;
+        case 2: fun1(b);
+        break;
+        case 3: exit (0);
+        default: printf("Wrong Choice Entered");
+    }
+}
+}
+void fun(int p)
+{
+int q;
+printf("Please Enter The Grade(1-5) Of Hotels You Want To Display Information\n");
+scanf("%d", &q);
+if(s->grade==q)
+printf("Name Of Hotel %s Location %s Average Room Charge %f No. Of Rooms %d\n", s->name, s->address, s->roomcharge, s->rooms);
+else
+printf("Sorry, No Hotels Available With Grade %d",q);
+}
+void fun1(int q)
+{
+int p;
+printf("Please Enter The Price Of Room Charge You Want To Check Hotels For\n");
+scanf("%d", &p);
+if(s->roomcharge<=p)
+printf("Name Of Hotel %s Location %s Rating %d Average Room Charge %f No. Of Rooms %d", s->name, s->address, s->grade, s->roomcharge, s->rooms);
+else
+printf("Sorry, No Hotels Available Below Or Equal To %d",p);
+}
+50.
+#include <stdio.h>
+struct Metric
+{
+    int meters;
+    int centimeters;
+};
+struct Metric s;
+struct British
+{
+    int feet;
+    float inches;
+};
+struct British p;
+int main()
+{
+    float Sum;
+    printf("Enter The Values Of Meters,Centimetres,Feet,Inches");
+    scanf("%d%d%d%f",&s.meters,&s.centimeters,&p.feet,&p.inches);
+    s.meters=s.meters*100;
+    p.feet=p.feet*30;
+    p.inches=p.inches*2.5;
+    Sum=s.meters+s.centimeters+p.feet+p.inches;
+    printf("%f",Sum);
+}
+51.
+#include <stdio.h>
+#include <time.h>
+struct date
+{
+    int day;
+    int month;
+    int year;
+};
+struct date s;
+void fun(int)
+void fun1(int)
+void fun2(int)
+int main()
+{
+    int a,b,c;
+    printf("Please Enter The Day(01-31),Month(1-12) and Year");
+    fun(a);
+    fun1(b);
+    fun2(c);
+}
+void fun(int p)
+{
+    scanf("%d%d%d",&s.day,&s.month,&s.year);
+}
+void fun1(int q)
+{
+    if(s.month==2&&s.day==31)
+    s.day=s.day-3;
+    if(s.month==2&&s.day==30)
+    s.day=s.day-2;
+    if((s.month!=1||s.month!=3||s.month!=5||s.month!=7||s.month!=8||s.month!=10||s.month!=12) &&s.day==31)
+    s.day=s.day-1;
+    if(s.month==2&&s.year%4!=0&&s.day==29)
+    s.day=s.day-1;
+}
+void fun2(int r)
+{
+    printf("%d %d, %d", s.day,s.month,s.year);
+}
+52.
+/******************************************************************************
+                                 Bubble Sort
+*******************************************************************************/
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    char str[3][20]={"india ","indian", "indiaoil"};
+    char temp[20];
+    for(int i=0;i<3;i++)
+    {
+        for(int j=i+1; j<3;j++)
+        {
+            if(strcmp(str[i], str[j])>0)
+            {
+                strcpy(temp,str[i]);
+                strcpy(str[i],str[j]);
+                strcpy(str[j],temp);
+            }
+        }
+    }
+    for(int i=0;i<3;i++)
+    {  
+      puts(str[i]);      
+    }
+}
+53.
+/******************************************************************************
+                            Binary Search Of Strings
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+void fun(char [][20],int,char []);
+int main()
+{
+int n;
+printf("Enter The Value Of n");
+scanf("%d",&n);
+char a[n][20],b[20];
+for(int i=0;i<n;i++)
+{
+    scanf("%s",a[i]);
+}
+printf("Enter The String");
+scanf("%s",b);
+fun(a,n,b);
+}
+void fun(char a[][20],int n,char b[])
+{
+int flag=0;
+int min=0,max=n-1,mid;
+while(min<=max)
+{
+  mid=(max+min)/2;
+  if(strcmp(b,a[mid])<0)
+  max=mid-1;
+  else if(strcmp(b,a[mid])>0)
+  min=mid+1;
+  else
+  {
+    printf("String Found in Index =%d",mid);
+    flag=1;
+    return;
+  }
+}
+if(flag==0)
+printf("String Not Found");
+}
+54.Merging Of Two Arrays
+#include <stdio.h>
+int main()
+{
+int i=0,j=0,k=0,m,n;
+printf("Enter The Value Of m and n");
+scanf("%d%d",&m,&n);
+int a[m];
+int b[n];
+int c[m+n];
+printf("Enter The Elements Of First Array");
+    for(i=0;i<m;i++)
+    {
+          scanf("%d", &a[i]);
+    }
+printf("Enter The Elements Of Second Array");
+for(i=0;i<n;i++)
+    {
+          scanf("%d", &b[i]);
+    }
+    i=0;
+    while(i<m&&j<n)
+    {
+        if(a[i]<b[j])
+        {
+            c[k]=a[i];
+            i++,k++;
+        }
+        if(b[j]<a[i])
+        {
+            c[k]=b[j];
+            j++,k++;
+        }
+    }
+    while(j<n)
+    {
+        c[k]=b[j];
+        k++,j++;
+    }
+    while(i<m)
+    {
+        c[k]=a[i];
+        k++,i++;
+    }
+for(i=0;i<m+n;i++)
+    {
+            printf("%d\t", c[i]);
+    }
+}
+55.
+#include <stdio.h>
+int main()
+{
+    int i,j;
+    for(i=0;i<5;i++)
+    {
+        for(j=0;j<=i;j++)
+        {
+            printf("%d",j+1);
+        }
+        printf("\n");
+    }
+}
+56.
+#include <stdio.h>
+int fun(int []);
+int m;
+int main()
+{
+  int a[m],i;
+  printf("Enter the Value Of m");
+  scanf("%d",&m);
+  printf("Enter The Elements Of Array");
+  for(i=0;i<m;i++)
+  {
+      scanf("%d",&a[i]);
+  }
+  int y=fun(a);
+}
+int fun(int a[])
+{
+    int count=0,i,j=i+1;
+    if(i==m)
+    {
+        return count;
+    }
+    else if(a[i]==a[j])
+    {
+        count++;
+        printf("\nThe No. Of Times Element %d is Found=%d",a[i],count);
+        i++;j++;
+    }
+}
+57.
+#include <stdio.h>
+void fun(char  [5]);
+void fun1(char [5]);
+void fun2(char [5]);
+void fun3(char [5]);
+void fun4(char [5]);
+int main()
+{
+    char s[5]={"India"};
+    int ch;
+    while(1)
+    {
+        printf("\nEnter Your Choice\n 1.Reverse String\n 2.Find Length Of String\n 3.Copy One String To Another\n 4.Concatenate Two Strings\n 5.Compare Two Strings\n 6.Exit\n");
+        scanf("%d",&ch);
+        switch(ch)
+        {
+            case 1: fun(s);
+            break;
+            case 2: fun1(s);
+            break;
+            case 3: fun2(s);
+            break;
+            case 4: fun3(s);
+            break;
+            case 5: fun4(s);
+            break;
+            case 6: return 0;
+            default: printf("Wrong Choice Entered");
+        }
+    }
+}
+void fun(char s[5])
+{
+    printf("Reversed String is=");
+    for(int i=4;i>=0;i--)
+    printf("%c",s[i]);
+}
+void fun1(char s[5])
+{
+    int length=0;
+ for(int i=0;s[i]!=0; i++)
+    {
+        length++; 
+    }
+printf("Length of string is=%d",length);
+}
+void fun2(char s[5])
+{
+    char b[5];
+    for(int i=0;s[i]!=0;i++)
+    {
+        b[i]=s[i];
+    }
+    printf("Copied String=%s",b);
+}
+void fun3(char s[5])
+{
+    int i=0,j=0;
+    char b[5]={"Items"};
+while(s[i]!='\0')
+ i++;
+  while(b[j]!='\0')
+  {
+    s[i]=b[j];
+    i++;j++;
+  }
+  s[i]='\0';
+  printf("Concatenated String is=%s",s);
+}
+void fun4(char s[5])
+{
+    char b[5]={"Items"};
+    int flag;
+    for(int i=0;s[i]!=0;i++)
+    {
+        if(s[i]==b[i])
+        flag=0;
+        else if(s[i]>b[i])
+        flag=1;
+        else
+        flag=2;
+    }
+    if(flag==0)
+    printf("Strings Are Equal");
+    if(flag==1)
+    printf("First String is Greater Than Second String");
+    if(flag==2)
+    printf("Second String is Greater Than First String");
+}
+58. Recursive Linear Search
+#include <stdio.h>
+int main()
+{
+    int fun(int *, int, int);
+    int i,m,p;
+    scanf("%d", &m);
+int a[m];
+for(i=0;i<m;i++)
+{
+    scanf("%d",&a[i]);
+}
+printf("Enter The Element You Want To Search");
+scanf("%d",&p);
+int k=fun(a, m, p);
+if(k==-1)
+printf("Element Not Found In Array");
+else
+{
+   printf("Element Found In Index=%d",k); 
+}
+}
+int fun(int a[], int m, int b)
+{
+     static int i=0;
+    if(i==m)
+    {
+        return -1;
+    }
+ if(a[i]==b)
+ {
+     return i;
+ }
+ else
+ {
+     i++;
+     fun(a, m, b);
+ }
+}
+59. Recursive Bubble Sort
+#include <stdio.h>
+int main()
+{
+    void fun(int *, int);
+    int str[5]={1,4,5,3,2};
+    int temp;
+    fun(str, 5);
+    for(int i=0;i<5;i++)
+    {  
+      printf("%d ",str[i]);    
+    }
+}
+   void fun(int *str, int n)
+ {
+     static int i=0;
+     int j, temp;
+     if(i==5)
+     return;
+     else
+     {
+          for(j=i+1;j<n;j++)
+          {
+           if(str[i]>str[j])
+            {
+                temp=str[i];
+                str[i]=str[j];
+                str[j]=temp;
+            }
+            j++;
+          }
+                i++;
+                fun(str, n);
+     }
+}
+60.
+#include <stdio.h>
+#include <string.h>
+int k=1;
+int fun(char s[]);
+int main()
+{
+    int i,j=0;
+    char str[50]={"india madam taat people liril"};
+    char str2[50];
+    for(i=0;str[i]!=0;i++)
+    {
+        while(str[i]!=32)
+        {
+           str2[j]=str[i]; 
+           i++;
+           j++;
+        }
+        str2[j]='\0';
+        fun(str2);
+        k++;
+        j=0;
+    }
+}
+int fun(char str2[50])
+{
+char str3[50];
+strcpy(str3,str2);
+if(strcmp(str2,strrev(str3))==0)
+{
+printf("The %d Palindrome Word=%s\t",k,str2);
+}
+else
+{
+printf("Not A Palindrome\n");
+}
+return 0;
+}
+61.
+/******************************************************************************
+                   Printing Digits Of Number In Words(Method 1)
+*******************************************************************************/
+#include <stdio.h>
+#include <math.h>
+int fun(int);
+int quo;
+int fun1(int,int);
+int count=0;
+int main()
+{
+int n;
+printf("Enter The No");
+scanf("%d",&n);
+int k=fun1(count,n);
+int r;
+while(n!=0)
+    {
+        quo=n/pow(10,k-1);
+        fun(quo);
+        r=pow(10,k-1);
+        n=n % r;
+        k--;
+    }
+    if(k!=0)
+    {
+        quo=n/pow(10,k-1);
+        fun(quo);
+    }
+}
+int fun(int quo)
+{
+    switch(quo)
+    {
+        case 0: printf("Zero\t");
+        break;
+        case 1: printf("One\t");
+        break;
+        case 2: printf("Two\t");
+        break;
+        case 3: printf("Three\t");
+        break;
+        case 4: printf("Four\t");
+        break;
+        case 5: printf("Five\t");
+        break;
+        case 6: printf("Six\t");
+        break;
+        case 7: printf("Seven\t");
+        break;
+        case 8: printf("Eight\t");
+        break;
+        case 9: printf("Nine\t");
+        break;
+    }
+    return 0;
+}
+int fun1(int count,int n)
+{
+    int Sum=0,rem;
+    while(n!=0)
+    {
+        n=n/10;
+        count++;
+    }
+    return count;
+}
+62.
+#include <stdio.h>
+int main()
+{
+    int n,i;
+    printf("Enter the no of elements in the array");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter the array Elements");
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+        if(i%2==0)
+        {
+            a[i]=a[i]+2;
+        }
+        else if(i%2!=0)
+        {
+            a[i]=a[i]+1;
+        }
+    }
+    for(i=0;i<n;i++)
+    printf("%d\t",a[i]);
+}
+63.
+#include <stdio.h>
+int main()
+{
+    int n,i;
+    printf("Enter the no of elements in the array");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter the array Elements");
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+        if(i%2==0)
+        {
+            printf("%d\t",a[i]);
+        }
+    }
+}
+64.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+char str[200];
+printf("Enter the paragraph or sentence,add ':' to stop");
+scanf("%[^:]",str);
+printf("\n%s",strrev(str));
+}
+65.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+int i,y;
+char str[200];
+printf("Enter the string\n");
+scanf("%s",str);
+for(i=0;str[i]!='\n';i++)
+{
+    if(str[i]==32)
+    {
+        i++;
+        y=strlen(str);
+        if(y%2==0)
+        {
+            printf("%s\n",str);
+        }
+    }
+}
+}
+66.
+#include <stdio.h>
+int i,j;
+int fun(int [3][3]);
+int main()
+{
+int a[3][3];
+printf("Enter the array elements");
+for(i=0;i<3;i++)
+{
+    for(j=0;j<3;j++)
+    {
+    scanf("%d",&a[i][j]);
+    }
+}
+int y=fun(a);
+printf("Sum Of Diagonal Elements=%d",y);
+}
+int fun(int a[3][3])
+{
+static int i=0;
+static int Sum=0;
+if(i==3)
+{
+    return Sum;
+}
+else if(i<3)
+{
+    for(j=0;j<3;j++)
+    {
+        if(a[i]==a[j])
+        {
+            a[i][j]=a[i][j]+1;
+            Sum=Sum+a[i][j];
+        } 
+    }
+    i++;
+    fun(a);
+}
+}
+67.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str[100],word[20];
+   int i,j,m,n,temp,count=0,p;
+   printf("Enter a String ");
+   gets(str);
+   printf("Enter a Word to search and find it's Occurrence ");
+   gets(word);
+   m=strlen(str);
+   n=strlen(word);
+   for(i=0;i<m;i++)
+   {
+      temp = i;
+      for(j=0;j<n;j++)
+      {
+         if(str[i]==word[j])
+           {
+               i++;
+           }
+      }
+      p = i-temp;
+      if(p==n)
+         {
+             count++;
+         }
+      i = temp;
+   }
+   printf("Occurrence Of %s= %d", word,count);
+}
+68.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+   char c[100]="STRING";
+   char temp;
+   int i,j;
+   int n=strlen(c);
+   for(i=0;i<n-1;i++) 
+   {
+      for(j=i+1;j<n;j++) 
+      {
+         if(c[i]>c[j]) 
+         {
+            temp=c[i];
+            c[i]=c[j];
+            c[j]=temp;
+         }
+      }
+   }
+   printf("String after sorting is = %s",c);
+}
+69.
+#include <stdio.h>
+void push(int *);
+void pop(int *);
+int top1=0;
+int top2=0;
+int stack1[5];
+int stack2[5];
+int main()
+{
+int a[5]={1,2,3,4,5};
+push(a);
+}
+void push(int a[5])
+{
+    for(int i=0;i<5;i++,top1++)
+        stack1[top1]=a[i];
+    pop(stack1);
+}
+void pop(int stack1[5])
+{
+    void print(int *);
+    for(int i=top1-1;i>=0;i--,top2++)
+        stack2[top2]=stack1[i];
+    print(stack2);
+}
+void print(int *stack2)
+{
+   for(int i=top2-1;i>=0;i--)
+   printf("%d",stack2[i]);
+}
+70.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char str1[20];
+char str2[20];
+int i,j,count=0;
+printf("Enter the string");
+gets(str1);
+int m,n;
+printf("Enter value of m and n");
+scanf("%d%d",&m,&n);
+for(i=n,j=0;str1[i]!=0;i++,j++)
+{
+    str2[j]=str1[i];
+    count++;
+    if(count==m)
+    break;
+}
+str1[i]=0;
+printf("%s",str2);
+}
+71.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str[100],word[20];
+   int flag=0;
+   int i,j,m,n,temp,p;
+   printf("Enter a String ");
+   gets(str);
+   printf("Enter a Word to search and delete it from the string");
+   gets(word);
+   m=strlen(str);
+   n=strlen(word);
+   for(i=0;i<m;i++)
+   {
+      temp = i;
+      for(j=0;j<n;j++)
+      {
+         if(str[i]==word[j])
+           {
+               i++;
+               flag=1;
+           }
+      }
+      p = i-temp;
+      if(p==n)
+         {
+          i = temp;
+        for(j=i;j<(m-n);j++)
+        {
+            str[j] = str[j+n];
+            flag=1;
+        }
+        m=m-n;
+        str[j]=0;
+         }
+   }
+   if(flag==0)
+   {
+    printf("Word Not Found in the String");
+   }
+   else
+   {
+    printf("New String is= %s",str);
+   }
+}
+72.
+#include <stdio.h>
+struct student 
+{
+    int rollno;
+    char name[20];
+    char dept[20];
+    char course[20];
+    int year;
+};
+void fun(struct student s[],int);
+int n,rollno;
+int main()
+{
+    struct student s[450];
+    printf("Please Enter No. Of Entries");
+    scanf("%d",&n);
+    printf("Please Enter The Roll no.,Name,Dept,Course and Year Of Every Student");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d%s%s%s%d", &s[i].rollno,s[i].name,s[i].dept,s[i].course,&s[i].year);
+    }
+    printf("Please Enter The Roll No. Of Student");
+    scanf("%d", &rollno);
+    fun(s,rollno);
+}
+void fun(struct student p[],int rollno)
+{
+int flag=0;
+int min=0,max=n-1,mid;
+while(min<=max)
+{
+  mid=(max+min)/2;
+  if(p[mid].rollno>rollno)
+  max=mid-1;
+  else if(p[mid].rollno<rollno)
+  min=mid+1;
+  else
+  {
+    printf("%s\t%s\t%s\t%d",p[mid].name,p[mid].course,p[mid].dept,p[mid].year);
+    flag=1;
+    return;
+  }
+}
+if(flag==0)
+printf("Roll no. Not Found");
+}
+73.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+char str[10]={"Student"};
+char ch='d';
+for(int i=0;str[i]!=0;i++)
+{
+    if(ch==str[i])
+    {
+        str[i]='i';
+    }
+}
+printf("%s",str);
+}
+74. Reverse A String Using Stack
+int top=0;
+int main()
+{
+int i;
+char str[50];
+char stack[50];
+void push(char str[50],char stack[50]);
+void print(char str[50],char stack[50]);
+cout<<"Enter The String To Reverse: "<<endl;
+gets(str);
+push(str,stack);
+print(str,stack);
+}
+void push(char str[50],char stack[50])
+{
+    int i=0;
+    while(str[i]!=0)
+    {
+        stack[top]=str[i];
+        top++;
+        i++;
+    }
+}
+void print(char str[50],char stack[50])
+{
+    int i;
+    cout<<"Reversed String Is: \n";
+    for(i=top;i>=0;i--)
+        cout<<stack[i];
+}
+75.
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  int i,num=0,n,a[10];
+  printf("Please Enter The Binary Number");
+  scanf("%d",&n);
+  for(i=0;n!=0;i++)
+  {
+    a[i]=n%10;
+    n=n/10;
+  }
+  n=i;
+  for(i=0;i<n;i++)
+  {
+    num=num+a[i]*pow(2,i);
+  }
+  printf("Decimal Value = %d",num);
+}
+76.Calculating Electricity Bill
+#include <stdio.h>
+int main()
+{
+int n,p;
+float s,x;
+printf("Please Enter The Electricity Units Consumed");
+scanf("%d",&n);
+if(n<=50)
+{
+p=n*0.5;
+s=p +p*0.02;
+printf("The Electricity Bill is =%f",s);
+}
+if(n>50 && n<=150)
+{
+n=n-50;
+x=n*0.75;
+x=x+25;
+x= x + x*0.02;
+printf("The Electricity Bill is =%f",x);
+}
+if(n>150 && n<=250)
+{
+n=n-150;
+x=n*1.20;
+x=x+100;
+x= x + x*0.02;
+printf("The Electricity Bill is =%f",x);
+}
+if(n>250)
+{
+n=n-250;
+x=n*1.50;
+x=x+220;
+x= x + x*0.02;
+printf("The Electricity Bill is =%f",x);
+}
+}
+77.1 to N Prime No.s Printing
+#include <stdio.h>
+int fun(int);
+int main()
+{
+    int i,y,n;
+    printf("Enter The Value Of n");
+    scanf("%d",&n);
+    for(i=2;i<=n;i++) 
+    {
+        y=fun(i);
+        if(y==1) 
+        {
+            printf("%d ",i);
+        }
+    }
+}
+int fun(int i)
+{
+    int j;
+    for(j=2;j<=i/2;j++) 
+    {
+        if(i%j==0)
+          return 0;
+    }
+return 1;
+}
+
+OR
+
+#include<stdio.h>
+int main()
+{
+	 int n,flag,i,j;
+	 printf("Enter the value of n");
+	 scanf("%d",&n);
+	 for(i=2;i<=n;i++)
+	 {
+		  flag=0;
+		  for(j=2;j<=i/2;j++)
+		  {
+			   if(i%j==0)
+			   {
+			    flag=1;
+			    break;
+			   }
+		  }
+		  if(flag==0)
+		  {
+		    printf("%d\t",i);
+		  }
+	 }
+}
+78.Print Prime No.s Between A Given Interval
+#include <stdio.h>
+int main()
+{
+int a,b,i,j,flag;
+printf("Enter Lower Bound And Upper Bound Of The Interval");
+scanf("%d%d",&a,&b); 
+printf("Prime numbers between %d and %d are ",a,b);
+for(i=a;i<=b;i++) 
+{
+if(i==1||i==0)
+continue;
+flag=1;
+for(j=2;j<=i/2;j++) 
+{
+if(i%j==0) 
+{
+flag=0;
+break;
+}
+}
+if(flag==1)
+printf("%d ",i);
+}
+}
+79.First N Prime No.s Printing
+#include<stdio.h>
+int main()
+{
+int n,count,flag,i,j;
+printf("Enter no. of prime numbers");
+scanf("%d",&n);
+for(count=1,i=2;count<=n;i++)
+{
+flag=0;
+for(j=2;j<=i/2;j++)
+{
+if(i%j==0)
+{
+flag=1;
+break;
+}
+}
+if(flag==0)
+{
+printf("%d ",i);
+count++;
+}
+}
+}
+80.Linear Search in a 2-D Array
+#include <stdio.h>
+int main()
+{
+    int i,m,p,j,n,flag=0;
+    scanf("%d%d", &m, &n);
+int a[m][n];
+for(i=0;i<m;i++)
+{
+    for(j=0;j<n;j++)
+    {
+        scanf("%d",&a[i][j]);
+    }
+}
+printf("Enter The Element You Want To Search");
+scanf("%d",&p);
+for(i=0;i<m;i++)
+{
+    for(j=0;j<n;j++)
+    {
+      if(a[i][j]==p)
+    {
+        printf("Element Found In Index=%d %d",i,j);
+        flag=1;
+        break;
+    }  
+    }
+}
+if(flag==0)
+printf("Element Not Found In Array");
+}
+81.Intersection of elements of two arrays(1-D)
+#include <stdio.h>
+int m,n;
+int main()
+{
+    int i,j,k,c1=0,p;
+    printf("Enter Value Of m and n");
+    scanf("%d%d", &m,&n);
+    int a[m];
+    int b[n];
+    int c[m+n];
+    printf("Enter The Elements Of First Array");
+    for(i=0;i<m;i++)
+    {
+          scanf("%d", &a[i]);
+    }
+    printf("Enter The Elements Of Second Array");
+    for(j=0;j<n;j++)
+    {
+            scanf("%d", &b[j]);
+    }
+    for(i=0,p=0;i<m;i++)
+    {
+    for(j=0;j<n;j++)
+    {
+    if(a[i]==b[j])
+        {
+            c[p]=a[i];
+            c1++;
+            p++;
+        }
+    }
+    }
+    printf("Intersection Of Two Arrays is = ");
+    for(i=0;i<c1;i++)
+    {
+    printf("%d\t",c[i]);
+    }
+}
+82.Perfect No.
+#include<stdio.h>
+int main()
+{
+int i,Sum=0,n;
+printf("Enter The no.");
+scanf("%d",&n);
+for(i=1;i<n;i++)
+{
+    if(n%i==0)
+    Sum=Sum + i;
+}
+if(n==Sum)
+printf("%d is a perfect no.",n);
+else
+printf("%d is not a perfect no.",n);
+}
+83.Buzz No.
+#include<stdio.h>
+int main()
+{
+int rem,Sum=0,n;
+printf("Enter The no.");
+scanf("%d",&n);
+rem=n%10;
+Sum=Sum+rem;
+if(n%7==0||Sum==7)
+printf("%d is a Buzz no.",n);
+else
+printf("%d is not a Buzz no.",n);
+}
+84.Union of elements of two arrays(1-D)//Not Complete Yet
+#include <stdio.h>
+#include <stdlib.h>
+int m,n;
+int main()
+{
+    int i,j,k,c1=0,c2=0,p;
+    printf("Enter Value Of m and n");
+    scanf("%d%d", &m,&n);
+    int a[m];
+    int b[n];
+    int c[m+n];
+    printf("Enter The Elements Of First Array");
+    for(i=0;i<m;i++)
+    {
+          scanf("%d", &a[i]);
+    }
+    printf("Enter The Elements Of Second Array");
+    for(j=0;j<n;j++)
+    {
+            scanf("%d", &b[j]);
+    }
+    for(i=0,p=0;i<m;i++)
+    {
+            c[p]=a[i];
+            c1++;
+            p++;
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(a[i]==b[j])
+            {
+            goto label;
+            }
+        }
+    }
+    for(j=0,k=p;j<n;j++)
+    {
+         c[k]=b[j];
+         c2++;
+         k++;
+    }
+    for(i=0;i<c1+c2;i++)
+    {
+            printf("%d\t", c[i]);
+    }
+    exit(0);
+   label: for(i=0;i<m;i++)
+    {
+          printf("%d ",a[i]);
+    }
+    exit(0);
+}
+85.Anagrams
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+int i,j,flag=0,count=0;
+char str1[20];
+char str2[20];
+gets(str1);
+gets(str2);
+int m=strlen(str1);
+int n=strlen(str2);
+for(i=0;str1[i]!=0;i++)
+{
+    for(j=0;str2[j]!=0;j++)
+    {
+        if(str1[i]==str2[j] && m==n)
+        {
+            flag=1;
+            count++;
+        }
+    }
+}
+if(flag==0 || count<m || count>m)
+printf("Strings are not anagram");
+if(flag==1 && count==m)
+printf("Strings are anagram");
+}
+86.Interchanging First and last digits of any number
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int num,swappedNum,firstDigit,lastDigit,digits;
+    printf("Enter any number ");
+    scanf("%d",&num);
+    digits=(int)log10(num);
+    firstDigit=(int)(num/pow(10,digits));
+    lastDigit=num%10; 
+    swappedNum=lastDigit;
+    swappedNum=swappedNum * (int)round(pow(10,digits));
+    swappedNum=swappedNum + num % ((int)round(pow(10,digits)));
+    swappedNum=swappedNum - lastDigit;
+    swappedNum=swappedNum + firstDigit;
+    printf("Number after swapping first and last digit is = %d",swappedNum);
+}
+87.Remove Duplicates in a 1-D Array or Printing Of Unique Elements in an 1-D Array
+#include <stdio.h>
+int main()
+{
+int i,j,k,n;
+printf("Enter Size Of The Array ");
+scanf("%d",&n);
+int a[n];
+printf("Enter Elements Of The Array ");
+for(i=0;i<n;i++)
+{
+scanf("%d", &a[i]);
+}
+for(i=0;i<n;i++)
+{
+for(j=i+1;j<n;j++)
+{
+if(a[i]==a[j])
+{
+for(k=j;k<n-1;k++)
+{
+a[k]=a[k + 1];
+}
+n--;
+j--;
+}
+}
+}
+printf("Array Elements After Deleting Duplicates Is = ");
+for(i=0;i<n;i++)
+{
+printf("%d",a[i]);
+}
+}
+88.To Print First Digit Of Any Number
+#include <stdio.h>
+int main()
+{
+    int n,first;
+    printf("Enter any number");
+    scanf("%d",&n);
+    first=n;
+    while(first>=10)
+    {
+    first=first/10;
+    }
+    printf("First digit Of %d is = %d",n,first);
+}
+
+OR
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+int n,digits,first;
+printf("Enter The No.");
+scanf("%d",&n);
+digits=(int)log10(n);
+first=(int)(n/pow(10,digits));
+printf("First Digit Of %d is = %d",n,first);
+}
+89.Sum Of Prime No.s Between 1 to n
+#include<stdio.h>
+int main()
+{
+	 int n,flag,i,j,Sum=0;
+	 printf("Enter the value of n");
+	 scanf("%d",&n);
+	 for(i=2;i<=n;i++)
+	 {
+		  flag=0;
+		  for(j=2;j<=i/2;j++)
+		  {
+			   if(i%j==0)
+			   {
+			    flag=1;
+			    break;
+			   }
+		  }
+		  if(flag==0)
+		  Sum=Sum+i;
+	 }
+	 printf("Sum Of Prime No.s Between 1 and %d is = %d",n,Sum);
+}
+90.Sum Of Prime No.s Between a Given Range
+#include <stdio.h>
+int main()
+{
+int a,b,i,j,flag,Sum=0;
+printf("Enter Lower Bound And Upper Bound Of The Interval");
+scanf("%d%d",&a,&b); 
+for(i=a;i<=b;i++) 
+{
+if(i==1||i==0)
+continue;
+flag=1;
+for(j=2;j<=i/2;j++) 
+{
+if(i%j==0) 
+{
+flag=0;
+break;
+}
+}
+if(flag==1)
+Sum=Sum+i;
+}
+printf("Sum Of Prime No.s Between %d and %d is = %d",a,b,Sum);
+}
+91.Sum Of First N Prime No.s
+#include<stdio.h>
+int main()
+{
+int n,count,flag,i,j,Sum=0;
+printf("Enter no. of prime numbers");
+scanf("%d",&n);
+for(count=1,i=2;count<=n;i++)
+{
+flag=0;
+for(j=2;j<=i/2;j++)
+{
+if(i%j==0)
+{
+flag=1;
+break;
+}
+}
+if(flag==0)
+{
+Sum=Sum+i;
+count++;
+}
+}
+printf("Sum Of First %d Prime No.s is = %d",n,Sum);
+}
+92.Find HCF(GCD) Of Two Numbers
+#include<stdio.h>
+int main()
+{
+    int i,min,a,b,hcf;
+    printf("Enter the two No.s you want to find hcf of");
+    scanf("%d%d",&a,&b);
+    min=(a<b)?a:b;
+    for(i=1;i<=min;i++)
+    {
+        if(a%i==0 && b%i==0)
+        {
+            hcf=i;
+        }
+    }
+    printf("HCF of %d and %d is = %d",a,b,hcf);
+}
+93.Find LCM Of Two Numbers
+#include<stdio.h>
+int main()
+{
+    int i,max,a,b,lcm;
+    printf("Enter the two No.s you want to find lcm of");
+    scanf("%d%d",&a,&b);
+    max=(a>b)?a:b;
+    i=max;
+    while(1)
+    {
+        if(i%a==0 && i%b==0)
+        {
+            lcm=i;
+            break;
+        }
+        i=i+max;
+    }
+    printf("LCM of %d and %d is = %d",a,b,lcm);
+}
+94.Printing Digits Of Numbers In Words(Method 2)
+include <stdio.h>
+#include <math.h>
+int main()
+{
+    int n,rem=0,digits;
+    printf("Enter any number to print in words");
+    scanf("%d",&n);
+    digits=(int)log10(n); 
+    while(n!=0)
+    {
+        rem=(rem*10) + (n % 10);
+        n=n/10;
+    }
+    digits=digits - ((int)log10(rem));  
+    while(rem!=0)
+    {
+        switch(rem%10)
+        {
+            case 0: 
+                printf("Zero ");
+                break;
+            case 1: 
+                printf("One ");
+                break;
+            case 2: 
+                printf("Two ");
+                break;
+            case 3: 
+                printf("Three ");
+                break;
+            case 4: 
+                printf("Four ");
+                break;
+            case 5: 
+                printf("Five ");
+                break;
+            case 6: 
+                printf("Six ");
+                break;
+            case 7: 
+                printf("Seven ");
+                break;
+            case 8: 
+                printf("Eight ");
+                break;
+            case 9: 
+                printf("Nine ");
+                break;
+        }
+        rem = rem/10;
+    }
+    while(digits)
+    {
+        printf("Zero ");
+        digits--;
+    }
+}
+95.Find Frequency Of Digits in a Number
+#include <stdio.h>
+int main()
+{
+    int i,lastDigit,num,n;
+    int freq[100];
+    printf("Enter any number");
+    scanf("%d",&num);
+    for(i=0;i<10;i++)
+    {
+        freq[i] = 0;
+    }
+    n = num; 
+    while(n != 0)
+    {
+        lastDigit = n % 10;
+        n = n/ 10;
+        freq[lastDigit]++;
+    }
+    printf("Frequency of each digit in %d is\n",num);
+    for(i=0;i<10;i++)
+    {
+        printf("Frequency of %d = %d\n", i,freq[i]);
+    }
+}
+96. Print Hello World Without Semi-Colons
+int main()
+{
+    if (printf(“Hello - World”)) 
+{
+
+}
+}
+97.Interchanging Middle digits of any number
+98.Tower Of Hanoi Problem(Using Stack(1-D))
+99.Inserting an element in a 2-D Array
+100.Deleting an element in a 2-D Array
+101.Bubble Sort in a 2-D Array(Rows Only)
+//102.2-D Stacks and 2-D Queues
+103.Remove Duplicates in a 2-D Array//
+104.Rotate Array Elements Stepwise Printing All Of Them(1-D)
+105.WAP for the following
+U N
+U N I V
+U N I V E R
+U N I V E R S I
+U N I V E R S I T Y
+U N I V E R S I 
+U N I V E R 
+U N I V 
+U N
+106.Intersection of elements of two arrays(2-D)
+107.Union of elements of two arrays(2-D)
+108.Bubble Sort in a 2-D Array(Columns Only)
+109.Bubble Sort in a 2-D Array(Both Rows And Columns Simultaneously)
+110.Replace a word in a string by another word
+111.Pascal's Triangle
+112.To Count Frequency Of Each Element In A Given Array(1-D)
+113.Left Rotate An Array By n Times(1-D)
+114.Right Rotate An Array By n Times(1-D)
+115.To Count Frequency Of Each Element In A Given Array(2-D)
+116.Left Rotate An Array By n Times(2-D)
+117.Right Rotate An Array By n Times(2-D) 
+
+//
+#include <stdio.h>
+int main()
+{
+int a[5]={5,7,3,2,4};
+int *p=a;
+int *p1=&a[1];
+int i,j,temp;
+for(i=0;i<5;i++)
+{
+for(j=i;j<5;j++)
+{
+    if(p[i]<p1[j])
+    {
+       temp=p[i];
+       p[i]=p1[j];
+       p1[j]=temp;
+    }
+}
+}
+p=a;
+for(i=0;i<5;i++)
+{
+    printf("%d ",*p);
+p++;
+}
+}
+//
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+char str[20];
+gets(str);
+int i,j,flag;
+scanf("%c",&j);
+for(i=0;str[i]!='\0';i++)
+{
+    flag=0;
+   if(str[i] == j)
+   { 
+    printf("hello");
+    str[i]=str[i+1];
+    flag=1;
+    break;
+   }   
+}
+puts(str);
+/*if(flag==0)
+    {
+        printf("Character Not Found");
+    }*/
+}
+//
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+FILE *p,*p1,*p2;
+char ch[100],ch1[100],ch2,ch3;
+int count=1,count1=1;
+p=fopen("Hello.txt","r");
+p1=fopen("Hello1.txt","r");
+while(1)
+{
+    ch3=fgetc(p1);
+    if(ch3==EOF)
+    break;
+    if(ch3 =='\n')
+    {
+        count1++;
+    }
+}
+while(1)
+{
+    ch2=fgetc(p);
+    if(ch2==EOF)
+    break;
+    if(ch2 =='\n')
+    {
+        count++;
+    }
+}
+fclose(p);
+fclose(p1);
+p=fopen("Hello.txt","r");
+p1=fopen("Hello1.txt","r");
+p2=fopen("Hello2.txt","w");
+while(fgets(ch,100,p)!=NULL && fgets(ch1,100,p1)!=NULL)
+{
+fputs(ch,p2);
+fputs(ch1,p2);
+}
+if(count>count1)
+{
+    while(fgets(ch,100,p)!=NULL)
+    {
+        fputs(ch,p2);
+    }
+}
+if(count<count1)
+{
+    while(fgets(ch1,100,p1)!=NULL)
+    {
+        fputs(ch1,p2);
+    }
+}
+fclose(p);
+fclose(p1);
+fclose(p2);
+}
+//
+
+//
+#include <iostream>
+using namespace std;
+void Create(int a[], int n);
+void Display(int a[], int n);
+void Insert(int a[], int n);
+void Delete(int a[], int n);
+void LinearSearch(int a[], int n);
+int main()
+{
+    int n;
+    cout<<"Enter The Size of The Array ";
+    cin>>n;
+    int a[n];
+    int ch;
+    while(ch!=6)
+    {
+        cout<<"\nEnter Your Choice\n 1. Create\n 2. Display\n 3. Insert\n 4. Delete\n 5. Linear Search\n 6. Exit\n ";
+        cin>>ch;
+        switch(ch)
+        {
+            case 1: Create(a,n);
+            break;
+            case 2: Display(a,n);
+            break;
+            case 3: Insert(a,n);
+            break;
+            case 4: Delete(a,n);
+            break;
+            case 5: LinearSearch(a,n);
+            break;
+            case 6: break;
+        }
+    }
+}
+void Create(int a[], int n)
+{
+int i;
+cout<<"Enter The Array Elements "<<endl;
+for(i=0;i<n;i++)
+cin>>a[i];
+}
+void Display(int a[], int n)
+{
+int i;
+cout<<"The Array Elements Are "<<endl;
+for(i=0;i<n;i++)
+cout<<a[i]<<" ";
+}
+void Insert(int a[], int n)
+{
+int i,position,element;
+cout<<"Please Enter The Index At Which You Want To Insert The Element ";
+cin>>position;
+cout<<"Please Enter The Element You Want To Insert ";
+cin>>element;
+for(i=n+1;i>=position;i--)
+a[i]=a[i-1];
+a[position]=element;
+}
+void Delete(int a[], int n)
+{
+int i,position,element;
+cout<<"Please Enter The Index At Which You Want To Delete The Element ";
+cin>>position;
+for(i=position;i<n;i++)
+a[i]=a[i + 1];
+}
+void LinearSearch(int a[], int n)
+{
+int i,flag = 0,num;
+cout<<"Enter The Element To Search In the Array ";
+cin>>num;
+for(i=0;i<n;i++)
+{
+    if(a[i] == num)
+    {
+    cout<<"Element Found";
+    cout<<endl;
+    flag = 1;
+    break;
+    }
+}
+if(flag == 0)
+{
+cout<<"Element Not Found";
+cout<<endl;
+}
+}
+//
+
+// Program To Delete Duplicate Elements From 1-D Array(Optimized Than Before Code)
+int main()
+{
+    int n,i,j;
+    cout<<"Enter The Size Of The Array ";
+    cin>>n;
+    int a[n];
+    cout<<"Enter The Array Elements ";
+    for(i = 0;i<n;i++)
+        cin>>a[i];
+    for(i = 0;i<n;i++)
+    {
+        for(j = i + 1;j<n;j++)
+        {
+            if(a[i] == a[j])
+             a[j] = -999;
+        }
+    }
+    for(i =0;i<n;i++)
+    {
+        if(a[i] != -999)
+        cout<<a[i]<<" ";
+    }
+    }
+
+// Program To Implement Insertion Sort Algorithm In C++
+#include <iostream>
+using namespace std;
+int main()
+{
+int n,i,j,key,count = 0,count1=0;
+cout<<"Enter The Size Of The Array: ";
+cin>>n;
+int a[n];
+cout<<"Enter The Array Elements: "; 
+for(i=0;i<n;i++)
+cin>>a[i];
+for(i=1;i<n;i++)
+{
+    key = a[i];
+    for(j = i - 1;j >= 0;j--)
+    {
+        count1++; // No. Of Comparisons
+        if(a[j]>key)
+        {
+            a[j + 1] = a[j];
+            count++; // No. Of Swaps
+        }
+        else
+        break;
+    }
+    a[j + 1] = key;
+}
+cout<<"The Sorted Array is: ";
+for(i=0;i<n;i++)
+cout<<a[i]<<" ";
+cout<<"No Of Swaps = "<<count<<endl;
+cout<<"No Of Comparisons = "<<count1;
+}
+
+// Leetcode:-
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,i,targ,j,flag = 0,m;
+    cout<<"Enter The Size Of The Array ";
+    cin>>n;
+    cout<<"Enter The Target Integer ";
+    cin>>targ;
+    int a[n];
+    int b[2];
+    cout<<"Enter The Array Elements ";
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    for(i=0;i<n;i++)
+    {
+    // m = targ - a[i]; Try To Optimize
+    {
+        if(a[i] + a[j] == targ)
+        {
+            b[0] = i;
+            b[1] = j;
+            flag = 1;
+            break;
+        }
+    }
+    } 
+    if(flag == 0)
+    cout<<"No Pair Possible For Sum Of Target";
+    else if(flag == 1)
+    {
+    cout<<"Indexes Are:- "<<endl;
+    for(i=0;i<2;i++)
+    cout<<b[i]<<" ";
+    }
+}
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+int i,minlength,flag = 0;
+char a[3][20] = {"dog","racecar","car"};
+minlength = strlen(a[0]);
+for(i=1;i<3;i++)
+{
+    int currentLength = strlen(a[i]);
+    if (currentLength < minlength) 
+    minlength = currentLength; 
+}
+char b[20];
+cout<<"Words = "<<endl;
+for(i=0;i<3;i++)
+cout<<a[i]<<" ";
+cout<<endl;
+for(i=0;i<minlength;i++)
+{
+    if((a[0][i] == a[1][i]) && (a[1][i] == a[2][i]))
+        b[i] = a[1][i];
+        else
+        {
+            if(i == 0)
+            flag = 1;
+            else
+            break;
+        }
+}
+b[i]='\0';
+if(flag == 1 || i == 0)
+cout<<"No Common Prefix Among Input Strings";
+else if(flag == 0)
+{
+    cout<<"The Longest Common Prefix is = "<<endl;
+    cout<<b;
+}
+}
+
+
+
+// optimize Using Binary Search
+#include <iostream>
+using namespace std;
+int main()
+{
+int n,i,target,flag = 0;
+cout<<"Enter The Size Of The Array ";
+cin>>n;
+cout<<"Enter The Target Integer ";
+cin>>target;
+cout<<"Enter The Array Elements ";
+int a[n];
+for(i = 0 ;i<n;i++)
+cin>>a[i];
+for(i = 0 ;i<n;i++)
+{
+    if(a[i]==target)
+    {
+    cout<<"Target Found At Index "<<i;
+    flag = 1;
+    break;
+    }
+}
+if(flag == 0)
+{
+   for(i = 0 ;i<n;i++)
+{
+    if(target>a[i] && target <a[i + 1])
+    {
+    cout<<"Target Should Be Inserted At "<<i + 1;
+    flag = 2;
+    }
+}
+if(target > a[n] && flag!=2)
+cout<<"Target Should Be Inserted At "<<i;
+}
+}
+
+
+// Boyer Moore Majority Algorithm
+int main()
+{
+    int n,i,major,count = 0;
+    cout<<"Enter The Size Of The Array ";
+    cin>>n;
+    int a[n];
+    cout<<"Enter The Array Elements ";
+    for(i=0;i<n;i++)
+    cin>>a[i];
+    for(i=0;i<n;i++)
+    {
+    if(count == 0)
+{
+    major = a[i];
+    count = 1;
+}
+else if(a[i]== major)
+count++;
+else
+count--;
+}
+count = 0;
+for(i=0;i<n;i++)
+{
+    if(major == a[i])
+    count++;
+}
+if(count > n/2)
+cout<<"The Major Element is = "<<major;
+else
+cout<<"No Majority Element";
+}\
+
+
+// Program To Find Single Number(Every Element Repeated Two Times Except One)
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int n, i;
+    cout << "Enter The Size Of The Array (Should Be Odd Only) ";
+    cin >> n;
+    int a[n];
+    cout << "Enter The Array Elements ";
+    for (i = 0; i < n; i++)
+        cin >> a[i];
+    // Radix Sort Implementation
+    int max = a[0];
+    for (i = 1; i < n; i++) 
+    {
+        if (a[i] > max) 
+            max = a[i];
+    }
+    for (int exp = 1; max / exp > 0; exp *= 10) 
+    {
+        int output[n];
+        int count[10] = {0};
+        for (i = 0; i < n; i++)
+            count[(a[i] / exp) % 10]++;
+        for (i = 1; i < 10; i++)
+            count[i] += count[i - 1];
+        for (i = n - 1; i >= 0; i--) 
+        {
+            output[count[(a[i] / exp) % 10] - 1] = a[i];
+            count[(a[i] / exp) % 10]--;
+        }
+        for (i = 0; i < n; i++)
+            a[i] = output[i];
+    }
+// Find Single Number
+if(n == 1)
+cout<<"The Single Element is = "<<a[0];
+else
+{
+  for(i=0;i<n;i++)
+{
+    if(i==n)
+    {
+    cout<<"The Single Element is = "<<a[i];
+    break;
+    }
+    if(a[i]!=a[i+ 1])
+    {
+    cout<<"The Single Element is = "<<a[i];
+    break;
+    }
+    if(a[i]==a[i+ 1])
+    i++;
+}  
+}
+}
+
+
+// Ugly No. Program
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+using namespace std;
+int main()
+{
+int p,prime(int),n,i=2,t=0,flag=0;
+int a[20];
+printf("Please Enter The No. To Check(1 Is Already An Ugly No.) ");
+scanf("%d", &n);
+while(n!=1)
+{
+if(n%i==0)
+{
+p=prime(i);
+if(p==0)
+{
+a[t] = i;
+t++;
+n=n/i;
+}
+}
+else
+{
+    i++;
+}
+}
+i =0 ;
+if(t>3)
+cout<<"No. Entered Is Not A Ugly No.";
+else
+{
+for(i=0;i<t;i++)
+{
+    if(a[i] != 2)
+    {
+    if(a[i]!=5)
+    {
+        if(a[i]!= 3)
+        {
+          cout<<"No. Entered Is Not A Ugly No.";
+          flag = 1;
+          break;  
+        }
+    }
+    }
+}
+if(flag==0)
+cout<<"No. Entered Is A Ugly No.";
+}
+}
+int prime(int n)
+{
+    int i,flag=0;
+    for(i=2;i<n;i++)
+    {
+    if(n%i==0)
+    {
+        flag=1;
+        break;
+    }
+    }
+    if(flag==1)
+    return 1;
+    else
+    return 0;
+}
+
+
+
+// Happy No. Program
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+int n,sum =0,flag =0;
+int fun(int);
+cout<<"Enter Any Positive Integer To Check If Happy No. Or Not: ";
+cin>>n;
+int fast =n,slow = n;
+do // Floyd Cycle Detection(Hare And Tortoise Approach) Used Here
+{
+   slow = fun(slow); // Slow Moves 1 Step
+   fast = fun(fun(fast)); // Fast Moves 2 Steps
+   if(fast == 1)
+   {
+       cout<<"True";
+       flag = 1;
+       break;
+   }
+}while(slow!=fast);
+if(flag == 0)
+cout<<"False";
+}
+int fun(int n)
+{
+int p = 0,q;
+while(n>0)
+{
+q = n%10;
+p = p + q*q;
+n = n/10;
+}
+return p;
+}
+
+
+# No. Of Substrings In The Given String Program(Python)
+from collections import Counter
+words = ["ahjpjau", "ja", "ahbwzgqnuk", "tnmlanowax"]
+a = input("Enter The String: ")
+count = 0
+string_count = Counter(a)  # Count characters in the input string
+for word in words:
+    word_count = Counter(word)  # Count characters in the current word
+    valid = True
+    for char, freq in word_count.items():
+        if string_count[char] < freq:  # Check if input has enough of this char
+            valid = False
+            break
+    if valid:
+        count += 1
+print("Count:", count)
+
+
+
+// Balanced Paranthesis Program(Symmetric Approach)
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+int main() {
+    int m, top = 0, top2 = 0, i, flag = 0;
+    char inputstack[50];
+    char comparisonstack1[50];  // All brackets
+    char comparisonstack2[50];  // Reversed second half
+
+    cout << "Enter the number of characters (including symbols and parentheses): ";
+    cin >> m;
+
+    if (m > 50) {
+        cout << "Input too long!";
+        return 1;
+    }
+
+    cout << "Enter the expression: ";
+    for (i = 0; i < m; i++) {
+        cin >> inputstack[i];
+    }
+
+    // Step 1: Push only brackets into comparisonstack1
+    for (i = 0; i < m; i++) {
+        if (inputstack[i] == '(' || inputstack[i] == '{' || inputstack[i] == '[' ||
+            inputstack[i] == ')' || inputstack[i] == '}' || inputstack[i] == ']') {
+            comparisonstack1[top++] = inputstack[i];
+        }
+    }
+
+    // Step 2: If count is odd, it's unbalanced
+    if (top % 2 != 0) {
+        cout << "Expression has no balanced parentheses." << endl;
+        return 0;
+    }
+
+    // Step 3: Copy second half into comparisonstack2 in reverse order
+    for (i = top - 1; i >= top / 2; i--) {
+        comparisonstack2[top2++] = comparisonstack1[i];
+    }
+
+    // Step 4: Compare pairs
+    for (i = 0; i < top / 2; i++) {
+        char a = comparisonstack1[i];
+        char b = comparisonstack2[i];
+
+        if (!((a == '(' && b == ')') || 
+              (a == '{' && b == '}') || 
+              (a == '[' && b == ']'))) {
+            flag = 1;
+            break;
+        }
+    }
+
+    // Final Output
+    if (flag == 0)
+        cout << "Expression has balanced parentheses." << endl;
+    else
+        cout << "Expression has no balanced parentheses." << endl;
+
+    return 0;
+}
+
+// First Missing Positive
+#include <iostream>
+using namespace std;
+
+int firstMissingPositive(int nums[], int n) 
+{
+    // Step 1: Place each number at its correct index
+    for (int i = 0; i < n; i++) 
+{
+        while (nums[i] >= 1 && nums[i] <= n && nums[nums[i] - 1] != nums[i]) 
+{
+            swap(nums[i], nums[nums[i] - 1]);
+}
+
+}
+
+    // Step 2: Find first missing positive
+    for (int i = 0; i < n; i++) 
+{
+        if (nums[i] != i + 1)
+            return i + 1;
+}
+
+    return n + 1;
+}
+
+int main() 
+{
+    int n;
+    cout << "Enter size: ";
+    cin >> n;
+
+    int nums[n];
+    cout << "Enter elements:\n";
+    for (int i = 0; i < n; i++)
+        cin >> nums[i];
+
+    cout << "Smallest missing positive: "
+         << firstMissingPositive(nums, n);
+}
+// Replace Each Element Of The Array With Multiplication Of The Successor And Predecessor Of That Element Except First And Last Elements
+#include <iostream>
+using namespace std;
+int main()
+{
+int n,i,temp,temp1;
+cout<<"Enter The Size Of The Array ";
+cin>>n;
+int a[n];
+cout<<"Enter The Array Elements "<<endl;
+for(i=0;i<n;i++)
+cin>>a[i];
+for(i=0;i<n;i++)
+{
+if(i == 0)
+{
+temp = a[i];
+a[i] = a[i] * a[i + 1];
+}
+if(i>0)
+{
+temp1 = a[i];
+if(i == n - 1)
+{
+a[i] = temp * a[n - 1];
+break;
+}
+a[i] = temp * a[i + 1];
+temp = temp1;
+}
+}
+cout<<"Final Array: - "<<endl;
+for(i=0;i<n;i++)
+cout<<a[i]<<" ";
+}
+
+// Sort Even-Placed In Increasing And Odd-Placed In Decreasing Order
+#include <iostream>
+using namespace std;
+/* Partition function for ascending Quick Sort */
+int partitionAsc(int arr[], int low, int high) 
+{
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j < high; j++) 
+    {
+        if (arr[j] < pivot) 
+        {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+/* Quick Sort in ascending order */
+void quickSortAsc(int arr[], int low, int high) 
+{
+    if (low < high) 
+    {
+        int pi = partitionAsc(arr, low, high);
+        quickSortAsc(arr, low, pi - 1);
+        quickSortAsc(arr, pi + 1, high);
+    }
+}
+/* Partition function for descending Quick Sort */
+int partitionDesc(int arr[], int low, int high) 
+{
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j < high; j++) 
+    {
+        if (arr[j] > pivot) 
+        {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+/* Quick Sort in descending order */
+void quickSortDesc(int arr[], int low, int high) 
+{
+    if (low < high) 
+    {
+        int pi = partitionDesc(arr, low, high);
+        quickSortDesc(arr, low, pi - 1);
+        quickSortDesc(arr, pi + 1, high);
+    }
+}
+/* In-place separation of even-index and odd-index elements */
+int separateEvenOddIndex(int arr[], int n) 
+{
+    int evenPos = 0;
+    for (int i = 0; i < n; i++) 
+    {
+        if (i % 2 == 0) 
+        {
+            swap(arr[i], arr[evenPos]);
+            evenPos++;
+        }
+    }
+    return evenPos; // count of even-index elements
+}
+int main() 
+{
+    int n;
+    cout<<"Enter The Size Of The Array ";
+    cin >> n;
+    int arr[n];
+    cout<<"Enter The Array Elements "<<endl;
+    for (int i = 0; i < n; i++)
+    cin >> arr[i];
+    // Step 1: Separate even-index and odd-index elements
+    int evenCount = separateEvenOddIndex(arr, n);
+    // Step 2: Sort even-index elements in ascending order
+    quickSortAsc(arr, 0, evenCount - 1);
+    // Step 3: Sort odd-index elements in descending order
+    quickSortDesc(arr, evenCount, n - 1);
+    cout<<"Output Array: "<<endl;
+    for (int i = 0; i < n; i++)
+    cout << arr[i] << " ";
+}
+
+// Power Of Three
+def isPowerOfThree(n: int) -> bool:
+    if n <= 0:
+        return False
+    if n == 1:
+        return True
+    if n % 3 != 0:
+        return False
+    return isPowerOfThree(n // 3)
+
+// Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+from collections import Counter
+
+def canConstruct(ransomNote, magazine):
+    return Counter(ransomNote) <= Counter(magazine)
+
+// Valid Anagram
+def isAnagram(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+    return sorted(s) == sorted(t)
+
+
+// Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+def singleNumber(nums):
+    result = 0
+    for num in nums:
+        result ^= num
+    return result
+
+// Max Consecutive Ones
+int findMaxConsecutiveOnes(vector<int>& nums) 
+{
+    int count = 0;
+    int count1 = 0;
+    for (int i = 0; i < nums.size(); i++) 
+{
+        if (nums[i] == 1)
+            count++;
+        else
+            count = 0;
+        count1 = max(count1, count);
+}
+    return count1;
+}
+
+// Diameter Of Binary Tree
+int diameter = 0;
+int depth(TreeNode* root) 
+{
+    if (!root) 
+      return 0;
+    int left = depth(root->left);
+    int right = depth(root->right);
+    diameter = max(diameter, left + right);
+    return 1 + max(left, right);
+}
+
+// Tribonacci Series
+//(Recursive Code)
+#include <iostream>
+using namespace std;
+int trib(int n)
+{
+    if (n == 1) return 0;          
+    if (n == 2 || n == 3) return 1; 
+    return trib(n - 1) + trib(n - 2) + trib(n - 3); 
+}
+int main()
+{
+    int n;
+    cin >> n;         
+    cout << trib(n);   
+}
+//(Iterative Code)
+#include <iostream>
+using namespace std;
+int trib(int n)
+{
+    if (n == 1) 
+    return 0;
+    if (n == 2 || n == 3) 
+    return 1;
+    int t1 = 0; 
+    int t2 = 1; 
+    int t3 = 1;
+    int t;
+    for (int i = 4; i <= n; i++)
+    {
+        t = t1 + t2 + t3;
+        t1 = t2;
+        t2 = t3;
+        t3 = t;
+    }
+    return t3;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    cout << trib(n);
+}
